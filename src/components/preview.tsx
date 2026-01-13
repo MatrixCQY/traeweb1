@@ -15,7 +15,7 @@ interface PreviewProps {
 
 export function MarkdownPreview({ content, className }: PreviewProps) {
   return (
-    <div className={cn("h-full w-full overflow-y-auto p-4", className)}>
+    <div className={cn("h-full w-full overflow-y-auto p-4 bg-background text-foreground transition-colors duration-200", className)}>
       <article className="prose dark:prose-invert max-w-none prose-pre:bg-transparent prose-pre:p-0">
         <ReactMarkdown
           remarkPlugins={[remarkGfm, remarkMath]}
