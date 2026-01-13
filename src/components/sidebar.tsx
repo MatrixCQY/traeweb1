@@ -79,6 +79,7 @@ interface FileTreeNodeProps {
 }
 
 function FileTreeNode({ node, fileSystem, depth }: FileTreeNodeProps) {
+  // Destructure fileSystem properties including downloadFile
   const { files, selectFile, activeFileId, toggleFolder, deleteNode, renameNode, createFile, createFolder, downloadFile } = fileSystem;
   const [isHovered, setIsHovered] = useState(false);
 
