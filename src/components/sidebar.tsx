@@ -12,7 +12,8 @@ import {
   Edit2,
   MoreVertical,
   FilePlus,
-  FolderPlus
+  FolderPlus,
+  Download
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FileNode, FileSystemContextType } from "@/hooks/use-file-system";
@@ -162,6 +163,11 @@ function FileTreeNode({ node, fileSystem, depth }: FileTreeNodeProps) {
                 <FolderPlus size={12} />
               </button>
             </>
+          )}
+          {node.type === 'file' && (
+            <button onClick={handleDownload} className="p-0.5 hover:bg-background rounded" title="Download">
+              <Download size={12} />
+            </button>
           )}
           <button onClick={handleRename} className="p-0.5 hover:bg-background rounded" title="Rename">
             <Edit2 size={12} />

@@ -188,6 +188,21 @@ export function useFileSystem() {
     );
   }, [files]);
 
+  const downloadFile = useCallback((id: string) => {
+    const node = files[id];
+    if (!node || node.type !== 'file') return;
+
+    const blob = new Blob([node.content], { type: 'text/markdown' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = node.name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, [files]);
+
   return {
     files,
     activeFileId,
@@ -199,5 +214,6 @@ export function useFileSystem() {
     selectFile,
     toggleFolder,
     searchFiles,
+    downloadFile,
   };
 }
