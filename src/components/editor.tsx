@@ -1,9 +1,16 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
-import Editor, { useMonaco } from "@monaco-editor/react";
+import Editor, { useMonaco, loader } from "@monaco-editor/react";
 import { useTheme } from "next-themes";
 import { Loader2 } from "lucide-react";
+
+// Configure Monaco to use a reliable CDN (unpkg) to avoid issues in some regions
+loader.config({
+  paths: {
+    vs: "https://unpkg.com/monaco-editor@0.44.0/min/vs",
+  },
+});
 
 interface EditorProps {
   value: string;

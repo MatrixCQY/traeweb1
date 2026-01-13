@@ -1,11 +1,12 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === 'production';
-
 const nextConfig: NextConfig = {
   /* config options here */
   output: "export",
-  basePath: isProd ? "/traeweb1" : "",
+  // Ensure basePath matches the repository name
+  basePath: "/traeweb1",
+  // Optional: assetPrefix usually defaults to basePath, but setting it explicitly can help
+  assetPrefix: "/traeweb1/",
   images: {
     unoptimized: true,
   },
