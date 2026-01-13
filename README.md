@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MathStudio
+
+**A professional Markdown editor designed for mathematics and coding.**
+
+[**🚀 Live Demo / 在线体验**](https://matrixcqy.github.io/traeweb1/)
+
+![MathStudio Preview](https://matrixcqy.github.io/traeweb1/preview-image-placeholder)
+*(Note: You can add a screenshot here later)*
+
+## Features
+
+- **LaTeX Support**: Write mathematical formulas easily with inline `$E=mc^2$` or block syntax.
+- **Code Highlighting**: Syntax highlighting for various programming languages.
+- **VS Code Style**: A clean, professional editing experience with dark mode support.
+- **Live Preview**: Real-time rendering of your Markdown content.
+- **File Management**: 
+  - Virtual file system (files/folders) persisted in browser.
+  - Search functionality.
+  - Import/Export capability (download `.md` files).
+- **Responsive Design**: Works on desktop, tablets, and mobile devices (with split-view support).
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MatrixCQY/traeweb1.git
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This project is automatically deployed to GitHub Pages using GitHub Actions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Framework**: [Next.js](https://nextjs.org) (App Router)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com)
+- **Editor**: [Monaco Editor](https://microsoft.github.io/monaco-editor/)
+- **Markdown**: `react-markdown`, `remark-math`, `rehype-katex`, `rehype-highlight`
+- **Icons**: [Lucide React](https://lucide.dev)
