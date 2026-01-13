@@ -24,6 +24,7 @@ export interface FileSystemContextType {
   selectFile: (id: string) => void;
   toggleFolder: (id: string) => void;
   searchFiles: (query: string) => FileNode[];
+  downloadFile: (id: string) => void;
 }
 
 const STORAGE_KEY = 'mathstudio-fs-v1';

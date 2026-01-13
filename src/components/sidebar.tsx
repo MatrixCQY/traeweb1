@@ -79,7 +79,7 @@ interface FileTreeNodeProps {
 }
 
 function FileTreeNode({ node, fileSystem, depth }: FileTreeNodeProps) {
-  const { files, selectFile, activeFileId, toggleFolder, deleteNode, renameNode, createFile, createFolder } = fileSystem;
+  const { files, selectFile, activeFileId, toggleFolder, deleteNode, renameNode, createFile, createFolder, downloadFile } = fileSystem;
   const [isHovered, setIsHovered] = useState(false);
 
   const isActive = activeFileId === node.id;
