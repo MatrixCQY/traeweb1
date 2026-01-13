@@ -147,18 +147,16 @@ export default function Home() {
                 >
                   <Code2 size={16} />
                 </button>
-                {!isMobile && (
-                  <button
-                    onClick={() => setViewMode("split")}
-                    className={cn(
-                      "p-1.5 hover:bg-accent transition-colors",
-                      viewMode === "split" && "bg-accent text-accent-foreground"
-                    )}
-                    title="Split View"
-                  >
-                    <Columns size={16} />
-                  </button>
-                )}
+                <button
+                  onClick={() => setViewMode("split")}
+                  className={cn(
+                    "p-1.5 hover:bg-accent transition-colors",
+                    viewMode === "split" && "bg-accent text-accent-foreground"
+                  )}
+                  title="Split View"
+                >
+                  <Columns size={16} />
+                </button>
                 <button
                   onClick={() => setViewMode("preview")}
                   className={cn(

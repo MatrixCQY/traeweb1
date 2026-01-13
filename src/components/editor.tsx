@@ -2,7 +2,6 @@
 
 import React, { useRef, useEffect } from "react";
 import Editor, { useMonaco, loader } from "@monaco-editor/react";
-import { useTheme } from "next-themes";
 import { Loader2 } from "lucide-react";
 
 // Configure Monaco to use a reliable CDN (unpkg) to avoid issues in some regions
@@ -18,17 +17,17 @@ interface EditorProps {
 }
 
 export function MarkdownEditor({ value, onChange }: EditorProps) {
-  const { theme, systemTheme } = useTheme();
   const monaco = useMonaco();
   const editorRef = useRef<any>(null);
 
-  const currentTheme = theme === "system" ? systemTheme : theme;
-  const isDark = currentTheme === "dark";
+  // User requested code area to remain unchanged (Dark/VS Code style) regardless of system theme
+  // We lock it to vs-dark
+  const editorTheme = "vs-dark";
 
   useEffect(() => {
     if (monaco) {
-      // Custom theme definition if needed, or just switch between vs-dark and vs-light
-      // For now we rely on default vs-dark and light
+      // Ensure we are using the dark theme
+      monaco.editor.setTheme("vs-dark");
     }
   }, [monaco]);
 
@@ -37,13 +36,13 @@ export function MarkdownEditor({ value, onChange }: EditorProps) {
   };
 
   return (
-    <div className="h-full w-full relative">
+    <div className="h-full w-full relative bg-[#1e1e1e]">
       <Editor
         height="100%"
         defaultLanguage="markdown"
         value={value}
         onChange={(val) => onChange(val || "")}
-        theme={isDark ? "vs-dark" : "light"}
+        theme={editorTheme}
         onMount={handleEditorDidMount}
         loading={
           <div className="flex items-center justify-center h-full text-muted-foreground">
