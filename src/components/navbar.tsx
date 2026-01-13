@@ -55,12 +55,12 @@ export function Navbar({ fileSystem }: NavbarProps) {
         <span className="font-bold text-lg tracking-tight hidden sm:inline-block">MathStudio</span>
       </div>
 
-      <div className="flex-1 max-w-md mx-4 relative" ref={searchRef}>
+      <div className="flex-1 max-w-md mx-2 sm:mx-4 relative" ref={searchRef}>
         <div className="relative">
           <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
           <input
             type="text"
-            placeholder="Search files..."
+            placeholder="Search..."
             className="w-full bg-muted/50 border border-input rounded-md pl-8 pr-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-ring"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
