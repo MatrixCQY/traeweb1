@@ -98,3 +98,32 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--foreground);
 }
+
+/* Typography Overrides to match theme */
+.prose {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-lead: var(--muted-foreground);
+  --tw-prose-links: var(--primary);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-counters: var(--muted-foreground);
+  --tw-prose-bullets: var(--muted-foreground);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-quote-borders: var(--border);
+  --tw-prose-captions: var(--muted-foreground);
+  --tw-prose-code: var(--foreground);
+  --tw-prose-pre-code: var(--card-foreground);
+  --tw-prose-pre-bg: var(--secondary);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+  
+  /* Invert (Dark Mode) overrides - mapped to same variables because our variables already switch values in dark mode! 
+     BUT prose-invert switches to use --tw-prose-invert-*, so we need to set those too if we use prose-invert.
+     HOWEVER, since our variables (like --foreground) ALREADY switch based on .dark class, 
+     we actually DON'T want prose-invert to flip them again (which usually flips light gray to dark gray).
+     
+     If we use our dynamic variables, we might not even need 'dark:prose-invert' if we just let the variables handle it.
+     Let's try removing 'dark:prose-invert' from the component and rely on these variables.
+  */
+}
