@@ -113,6 +113,11 @@ function FileTreeNode({ node, fileSystem, depth }: FileTreeNodeProps) {
     }
   };
 
+  const handleDownload = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    downloadFile(node.id);
+  };
+
   const handleAddFile = (e: React.MouseEvent) => {
     e.stopPropagation();
     const name = prompt("Enter file name:", "Untitled.md");
