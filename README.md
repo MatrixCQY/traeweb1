@@ -4,8 +4,8 @@
 
 [**Live Demo / 在线体验**](https://matrixcqy.github.io/MathStudio/)
 
-![MathStudio Preview](https://matrixcqy.github.io/MathStudio/preview-image-placeholder)
-*(Note: You can add a screenshot here later)*
+![MathStudio Preview](public/preview.png)
+
 
 ## Features
 
